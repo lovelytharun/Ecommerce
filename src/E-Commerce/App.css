@@ -1,0 +1,51 @@
+body{
+  background: url("image.webp") no-repeat;
+  background-size:1700px ;
+}
+h1{
+  color:rgb(142, 95, 24);
+}
+h2{
+  color:black;
+}
+form{
+  height: 612px;
+  width: 350px;
+  color:red;
+  background-color:rgb(238, 235, 230);
+}
+
+box{
+  align-items: center;
+  position: absolute;
+  display: flex;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:black;
+  padding: 10px;
+  border-radius: 19px;
+}
+.up{
+  margin-top: 7px;
+}
+
+nav{
+  position:absolute;
+  right: 0px;
+  left: 0px;
+  border-radius: 30px;
+  background-color: black;
+  height: 50px;
+  
+}
+
+button:hover{
+  background-color: rgb(49, 206, 49);
+}
+
+button{
+  position:static;
+  border-radius: 100%;
+
+}
