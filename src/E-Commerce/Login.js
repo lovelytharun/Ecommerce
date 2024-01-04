@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Login.css';
 
-function App() {
+function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -15,14 +15,12 @@ function App() {
     console.log('Remember Me:', rememberMe);
     setUsername('');
     setPassword('');
-    // Handle login logic, including rememberMe if needed
   };
 
   const handleForgotPassword = (e) => {
     e.preventDefault();
     console.log('Forgot Password - Email:', resetEmail);
     setResetEmail('');
-    // Add logic to handle password reset (e.g., send a reset link to the user's email)
   };
 
   return (
@@ -37,14 +35,14 @@ function App() {
             <form onSubmit={handleForgotPassword}>
               <center><p><h2><u>FORGOT PASSWORD</u></h2></p></center>
               <br></br>
-              <label>Email:
+              <center><label>Email
                 <br></br>
                 <input type="email" value={resetEmail} onChange={(e) => setResetEmail(e.target.value)} required />
-              </label>
+              </label></center>
               <br></br>
-              <br></br>
+              
               <div class="login">
-                <button type="submit" className="button1"><h3>Reset Password</h3></button>
+                <center><button type="submit" className="button1"><h3>Reset Password</h3></button></center>
               </div>
               <br></br>
               <label class="pass" onClick={() => setShowForgotPassword(false)}>Go back to login</label>
@@ -53,20 +51,20 @@ function App() {
             <form onSubmit={handleLogin}>
               <center><p><h2><u>LOGIN</u></h2></p></center>
               <br></br>
-              <label>Email:
+              <label>Email
               <br></br>
-                <input type="text" className="textfield1" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                <input type="email" className="textfield1" value={username} onChange={(e) => setUsername(e.target.value)} required />
               </label>
               <br></br>
               <br></br>
-              <label>Password:
+              <label>Password
               <br></br>
                 <input type="password" className="textfield2" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </label>
               <br></br>
               <br></br>
               <label>
-                <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} />
+                <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} required/>
                 Remember me?
               </label>
               <div class="login">
@@ -82,4 +80,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

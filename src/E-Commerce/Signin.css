@@ -1,18 +1,20 @@
-body{
-  background: url("image.webp") no-repeat;
-  background-size:1700px ;
-}
+/* body{
+  background: url("image4.jpeg") no-repeat;
+  background-size:1550px ;
+} */
 h1{
   color:rgb(142, 95, 24);
 }
 h2{
-  color:black;
+  color:rgba(235, 225, 225, 0.875);
 }
 form{
-  height: 612px;
+  
+  background: transparent;
+  border-radius: 30px;
   width: 350px;
-  color:red;
-  background-color:rgb(238, 235, 230);
+  color:rgb(119, 255, 0);
+  background-color:rgba(61, 61, 58, 0.467);
 }
 
 box{
@@ -22,7 +24,8 @@ box{
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color:black;
+  background-color:rgb(95, 87, 87);
+  background: transparent;
   padding: 10px;
   border-radius: 19px;
 }
@@ -46,6 +49,12 @@ button:hover{
 
 button{
   position:static;
-  border-radius: 100%;
+  border-radius: 20px 1px ;
 
+}
+.ins{
+  height: 40px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
 }

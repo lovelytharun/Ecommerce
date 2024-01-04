@@ -1,21 +1,6 @@
-/*.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    height: 300px;
-  }
-  
-  .form {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-  }*/
-  
   body{
-    background: url("image2.jpg");
+    background: url("image4.jpg") fixed;
+    background-size: 1600px;
   }
   h1{
     color:rgb(228, 230, 236);
@@ -27,7 +12,7 @@
     padding: 60px;
     
     height: 370px;
-    color:black;
+    color:rgb(214, 200, 200);
   }
   
   box{
@@ -73,7 +58,7 @@
   {
     margin-top: 20px;
     margin-right: 100px;
-    margin-left: 40px;
+    margin-left: 90px;
     
     padding-left: 20px;
     padding-right: 20px;
@@ -88,5 +73,5 @@
     margin-right: 21px;
   }
   .pass{
-    margin-left: 30px;
+    margin-left: 90px;
   }

@@ -1,85 +1,102 @@
-import React from "react";
-import './App.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { Button, TextField, Box, Container, Typography } from '@mui/material';
+//import { blue } from '@mui/material/colors';
+
+const socialButtonStyles = {
+  height: 40,
+  width: 200,
+  padding: 1,
+  borderRadius: 10,
+  
+  margin: '8px 0',
+};
+
 function Signin() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert("Submit Successfully");
+  const handleSocialLogin = (provider) => {
+    let socialMediaUrl;
+
+    switch (provider) {
+      case 'instagram':
+        socialMediaUrl = 'https://www.instagram.com/';
+        break;
+      case 'twitter':
+        socialMediaUrl = 'https://twitter.com/';
+        break;
+      case 'facebook':
+        socialMediaUrl = 'https://www.facebook.com/';
+        break;
+      default:
+        socialMediaUrl = '/';
+    }
+    window.location.href = socialMediaUrl;
   };
 
-  const handleReset = () => {
-    document.getElementById("signupForm").reset();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert('Submit Successfully');
   };
 
   return (
-    <body>
-      <div>
-        <nav>
-          <h1 className='up'><marquee>E-Commerce</marquee></h1>
-        </nav>
-
-        <box>
-          <form id="signupForm" onSubmit={handleSubmit}>
-            <center><h2><u><i>Sign Up</i></u></h2></center>
-            <br></br>
-            <label>FirstName :
-              <input type="text" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>LastName :
-              <input type="text" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>Email Id:
-              <input type="email" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>Phone Number :
-              <input type="number" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>Password :
-              <input type="password" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>Confirm Password :
-              <input type="password" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>Gender :</label>
-            <br></br>
-            <br></br>
-            <div>
-              <label>
-                <input type="radio" name="gender" value="male" />
-                Male
-              </label>
-              <label>
-                <input type="radio" name="gender" value="female" />
-                Female
-              </label>
-              <label>
-                <input type="radio" name="gender" value="others" />
-                Others
-              </label>
-            </div>
-            <br></br>
-            <label>Address:
-              <input type="text" required></input>
-            </label>
-            <br></br>
-            <br></br>
-            <center><button><h3>SUBMIT</h3></button></center>
-            <center><button type="button" onClick={handleReset}><h3>RESET</h3></button></center>
-          </form>
-        </box>
-      </div>
-    </body>
+    <Container component="main" maxWidth="xs">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          mt: 8,
+          backgroundColor: '#f0f0f0', // Light gray background
+          padding: '16px',
+          borderRadius: '40px',
+          boxShadow: '0px 0px 10px 0px #000000', // Box shadow
+        }}
+      >
+        <Typography component="h2" variant="h5" sx={{ marginBottom: '16px', textDecoration: 'underline', fontStyle: 'italic' }}>
+          Sign in
+        </Typography>
+        <Box component="form" id="signupForm" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <TextField label="Name" type="text" required fullWidth sx={{ marginBottom: '8px' }} />
+          <TextField label="Email Id" type="email" required fullWidth sx={{ marginBottom: '8px' }} />
+          <TextField label="Password" type="password" required fullWidth sx={{ marginBottom: '8px' }} />
+          <TextField label="Confirm Password" type="password" required fullWidth sx={{ marginBottom: '16px' }} />
+          <Button type="submit" fullWidth variant="contained" sx={{ marginBottom: '16px' }}>
+            <Link to="/login" style={{ color: 'white', textDecoration: 'none' }}>
+              Submit
+            </Link>
+          </Button>
+          <center><Typography component="div" variant="h6" sx={{ marginBottom: '16px', textDecoration: 'underline' }}>
+            OR
+          </Typography></center>
+          <Box>
+           <center> <Button
+              type="button"
+              className="ins"
+              onClick={() => handleSocialLogin('instagram')}
+              sx={{ ...socialButtonStyles }}
+            >
+              <FaInstagram size={30} />
+            </Button></center>
+            <center><Button
+              type="button"
+              className="ins"
+              onClick={() => handleSocialLogin('twitter')}
+              sx={{ ...socialButtonStyles }}
+            >
+              <FaTwitter size={30} />
+            </Button></center>
+           <center> <Button
+              type="button"
+              className="ins"
+              onClick={() => handleSocialLogin('facebook')}
+              sx={{ ...socialButtonStyles }}
+            >
+              <FaFacebook size={30} />
+            </Button></center>
+          </Box>
+        </Box>
+      </Box>
+    </Container>
   );
 }
 

@@ -1,0 +1,101 @@
+.login{
+    width: 420px;
+    background-color: #9c8f8fb1;
+    color:#010101;
+    border-radius: 50px;
+    padding: 30px 40px;
+}
+.login h1{
+    font-size: 36px;
+    text-align:center;
+    
+}
+.login .input-box{
+    position: relative;
+    width:100%;
+    height: 50px;
+    margin:30px 0;
+}
+.input-box input {
+    width:100%;
+    height:100%;
+    background-color: #e5e2ea00;
+    border:2px solid rgba(24, 23, 23, 0.433);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding:20px 45px 20px 20px;
+}
+.input-box input::placeholder {
+    color: #000000;
+}
+
+.login .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 4px;
+}
+.remember-forgot a{
+    color:#100f0f;
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+.login button{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0 0 0 .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+.login .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration: underline;
+}
+.sub:hover{
+    background-color: rgba(198, 146, 14, 0.763);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:url("image4.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
