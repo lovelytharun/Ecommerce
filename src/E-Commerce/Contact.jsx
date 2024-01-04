@@ -1,103 +1,75 @@
-import React, { useState } from 'react';
-import { Container, TextField, TextareaAutosize, Button, Typography, Box } from '@mui/material';
+import React from 'react';
+import Navigation from './Navigation';
+import Footer from './Footer';
+import { Container, Paper, Typography, TextField, Button, Grid } from '@mui/material';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
+const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (formData.name && formData.email && formData.message) {
-      console.log('Form Data:', formData);
-      setSubmitted(true);
-    } else {
-      alert('Please fill in all required fields.');
-    }
+    alert("Message sent successfully!");
+    // Handle form submission logic here
   };
 
   return (
-    <Container
-      maxWidth="md"
-      sx={{
-        textAlign: 'center',
-        paddingTop: 4,
-        paddingBottom: 4,
-        backgroundColor: 'gray',
-        borderRadius: '8px',
-        boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-      }}
-    >
-      <Typography variant="h4" gutterBottom sx={{ color: '#333', marginBottom: '2rem' }}>
-        Contact Us
-      </Typography>
-      {submitted ? (
-        <Typography variant="h6" sx={{ color: 'green', marginBottom: '2rem' }}>
-          Form submitted successfully!
-        </Typography>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <Box sx={{ marginBottom: '1rem' }}>
-            <TextField
-              label="Name*"
-              fullWidth
-              variant="outlined"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              sx={{ backgroundColor: '#fff' }}
-            />
-          </Box>
-          <Box sx={{ marginBottom: '1rem' }}>
-            <TextField
-              label="Email*"
-              fullWidth
-              variant="outlined"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              sx={{ backgroundColor: '#fff' }}
-            />
-          </Box>
-          <Box sx={{ marginBottom: '1rem' }}>
-            <TextareaAutosize
-              minRows={5}
-              placeholder="Message*"
-              style={{
-                width: '100%',
-                padding: '12px',
-                resize: 'vertical',
-                border: '1px solid #ccc',
-                borderRadius: '4px',
-              }}
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              sx={{ backgroundColor: '#fff' }}
-            />
-          </Box>
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
-        </form>
-      )}
+    <Container maxWidth="lg">
+      <Navigation />
+      <Grid container justifyContent="center" alignItems="center" style={{ minHeight: 'calc(100vh - 64px)' }}>
+        {/* Use a Grid container to center the Paper component */}
+        <Grid item xs={12} sm={8} md={6} lg={4}>
+          <Paper elevation={3} sx={{ padding: 4, borderRadius: '20px', backgroundColor: 'pink' }}>
+            <Typography variant="h4" mb={4} sx={{ textAlign: 'center', color: '#4caf50' }}>
+              Contact Us
+            </Typography>
+            <form onSubmit={handleSubmit}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    label="Your Name"
+                    variant="outlined"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    fullWidth
+                    label="Your Email"
+                    variant="outlined"
+                    required
+                    type="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    label="Subject"
+                    variant="outlined"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    label="Message"
+                    multiline
+                    rows={4}
+                    variant="outlined"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button type="submit" variant="contained" color="primary" fullWidth>
+                    Send Message
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+          </Paper>
+        </Grid>
+      </Grid>
+      <Footer />
     </Container>
   );
 };
 
-export default Contact;
+export default ContactUs;
